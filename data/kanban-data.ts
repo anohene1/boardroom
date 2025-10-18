@@ -1,0 +1,106 @@
+import { KanbanData } from "@/types";
+
+export const kanbanData: KanbanData = [
+  {
+    id: "applied",
+    title: "Applied",
+    profiles: [
+      {
+        id: "1",
+        name: "Kwame Mensah",
+        profilePicture: "https://i.pravatar.cc/150?u=kwame",
+        position: "Former Chief Financial Officer",
+        location: "Accra, Ghana",
+        tags: ["Finance", "Telecommunications"],
+        stage: "applied",
+      },
+      {
+        id: "2",
+        name: "Amara Okafor",
+        profilePicture: "https://i.pravatar.cc/150?u=amara",
+        position: "Non-Executive Director",
+        location: "Lagos, Nigeria",
+        tags: ["Fintech", "Strategy"],
+        stage: "applied",
+        match: "weak",
+      },
+      {
+        id: "3",
+        name: "Thabo Mbeki",
+        profilePicture: "https://i.pravatar.cc/150?u=thabo",
+        position: "Board Chairman",
+        location: "Johannesburg, South Africa",
+        tags: ["Governance", "Banking"],
+        stage: "applied",
+      },
+    ],
+  },
+  {
+    id: "screening",
+    title: "Screening",
+    profiles: [
+      {
+        id: "4",
+        name: "Zainab Hassan",
+        profilePicture: "https://i.pravatar.cc/150?u=zainab",
+        position: "Chief Technology Officer",
+        location: "Nairobi, Kenya",
+        tags: ["Technology", "Innovation"],
+        stage: "screening",
+        match: "strong",
+      },
+      {
+        id: "5",
+        name: "Ibrahim Kamara",
+        profilePicture: "https://i.pravatar.cc/150?u=ibrahim",
+        position: "Managing Director",
+        location: "Freetown, Sierra Leone",
+        tags: ["Operations", "Mobile Money"],
+        stage: "screening",
+        match: "medium",
+      },
+    ],
+  },
+  {
+    id: "shortlisted",
+    title: "Shortlisted",
+    profiles: [
+      {
+        id: "6",
+        name: "Valerie Netakambe",
+        profilePicture: "https://i.pravatar.cc/150?u=valerie",
+        position: "Chief Executive Officer",
+        location: "Abuja, Nigeria",
+        tags: ["Payments", "Telecommunications"],
+        stage: "shortlisted",
+        match: "strong",
+      },
+      {
+        id: "7",
+        name: "Kofi Agyeman",
+        profilePicture: "https://i.pravatar.cc/150?u=kofi",
+        position: "Audit Committee Chair",
+        location: "Kumasi, Ghana",
+        tags: ["Compliance", "Risk Management"],
+        stage: "shortlisted",
+        match: "strong",
+      },
+    ],
+  },
+  {
+    id: "interviews",
+    title: "Interviews",
+    profiles: [
+      {
+        id: "8",
+        name: "Fatima Diop",
+        profilePicture: "https://i.pravatar.cc/150?u=fatima",
+        position: "Strategy Director",
+        location: "Dakar, Senegal",
+        tags: ["Business Development", "Expansion"],
+        stage: "interviews",
+        match: "strong",
+      },
+    ],
+  },
+];

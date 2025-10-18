@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+.navbar-shadow {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.checkbox .before\:content-\[\'\'\]:before {
+  display: none;
+}
+
+.text-small {
+  font-size: 13px;
+}
+
+.text-tiny {
+  font-size: 10px !important;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@config "../tailwind.config.js";
