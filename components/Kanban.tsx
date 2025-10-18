@@ -69,7 +69,7 @@ export function KanbanBoard() {
 
   return (
     <div className="w-full">
-      <div className="flex gap-3 overflow-x-auto pb-4">
+      <div className="flex gap-3 overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
         {columns.map((column) => (
           <KanbanColumn
             key={column.id}
@@ -119,29 +119,29 @@ export function KanbanCard({ profile, onDragStart }: KanbanCardProps) {
     <div
       draggable
       onDragStart={(e) => onDragStart(e, profile.id)}
-      className="bg-white border border-[#DDE2F0] p-5 space-y-4"
+      className="bg-white border border-[#DDE2F0] p-4 sm:p-5 space-y-3 sm:space-y-4"
     >
       {/* Profile */}
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-2 sm:gap-3 items-center">
         <Avatar
           src={profile.profilePicture}
-          className="flex-shrink-0"
+          className="flex-shrink-0 size-10 sm:size-12"
         />
-        <div>
-          <p className="text-small font-semibold">{profile.name}</p>
-          <p className="text-[11px]">{profile.position} • {profile.location}</p>
+        <div className="min-w-0 flex-1">
+          <p className="text-xs sm:text-small font-semibold truncate">{profile.name}</p>
+          <p className="text-[10px] sm:text-[11px] truncate">{profile.position} • {profile.location}</p>
         </div>
       </div>
 
       {/* Tags */}
-      <div className="flex items-center gap-2">
-        {profile.tags.map((tag) => (<Badge label={tag} />))}
+      <div className="flex items-center gap-2 flex-wrap">
+        {profile.tags.map((tag, index) => (<Badge key={index} label={tag} />))}
       </div>
 
       {/* Actions */}
       {profile.match ? (
-        <div className="flex items-center justify-between gap-2">
-          <Link href="/" className="underline text-small font-medium">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-2">
+          <Link href="/" className="underline text-xs sm:text-small font-medium">
             View Profile
           </Link>
           <MatchBadge match={profile.match} />
@@ -150,10 +150,10 @@ export function KanbanCard({ profile, onDragStart }: KanbanCardProps) {
         <div className="flex justify-between items-center">
           <BookmarkButton />
           <Button isIconOnly size="sm" variant="light">
-            <FileText className="size-5" />
+            <FileText className="size-4 sm:size-5" />
           </Button>
           <Button isIconOnly size="sm" variant="light">
-            <Envelope className="size-5" />
+            <Envelope className="size-4 sm:size-5" />
           </Button>
           <RatingsStars />
         </div>
@@ -182,7 +182,7 @@ export function KanbanColumn({
   }, [parent]);
 
   return (
-    <div className="flex flex-col min-w-[350px] border border-neutral-200 mt-3 p-4">
+    <div className="flex flex-col min-w-[280px] sm:min-w-[320px] md:min-w-[350px] border border-neutral-200 mt-3 p-3 sm:p-4">
       <ColumnHeader
         title={column.title}
         number={column.profiles.length.toString()}
@@ -190,7 +190,7 @@ export function KanbanColumn({
       <div
         onDrop={(e) => onDrop(e, column.id)}
         onDragOver={onDragOver}
-        className="flex-1 space-y-3 min-h-[200px]"
+        className="flex-1 space-y-2 sm:space-y-3 min-h-[200px]"
         ref={parent}
       >
         {column.profiles.map((task: Profile) => (

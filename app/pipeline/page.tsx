@@ -15,6 +15,7 @@ import {
 import BorderedButton from "@/components/BorderedButton";
 import { Button } from "@heroui/button";
 import { KanbanBoard } from "@/components/Kanban";
+import SearchButton from "@/components/SearchButton";
 
 export default function PipelinePage() {
   return (
@@ -25,7 +26,7 @@ export default function PipelinePage() {
         <BreadcrumbItem>Pipeline</BreadcrumbItem>
       </Breadcrumbs>
 
-      <div className="flex justify-between gap-6 items-end">
+      <div className="flex flex-col sm:flex-row sm:justify-between gap-6 sm:items-end">
         <div className="space-y-3">
           <div className="flex gap-4 items-center">
             <h1 className="font-serif text-2xl underline">
@@ -45,7 +46,7 @@ export default function PipelinePage() {
           </div>
         </div>
 
-        <div className="flex gap-4 items-center">
+        <div className="grid grid-cols-2 sm:flex gap-4 items-center">
           <BorderedButton>
             VIEW <Eye className="size-4" />
           </BorderedButton>
@@ -65,7 +66,7 @@ export default function PipelinePage() {
 
 function SearchBar() {
   return (
-    <div className="bg-white py-3 px-5 mt-5 flex gap-20 border-b border-b-neutral-100">
+    <div className="bg-white py-3 px-3 sm:px-5 mt-5 flex flex-col sm:flex-row gap-3 sm:gap-8 md:gap-20 border-b border-b-neutral-100">
       {/* Search Field */}
       <div className="flex flex-1 gap-3 items-center">
         <Search className="size-5" />
@@ -75,15 +76,15 @@ function SearchBar() {
         />
       </div>
 
-      {/* Location */}
-      <div className="flex items-center gap-2">
-        <Filter className="size-5" />
-        <span className="text-sm ">Filters</span>
-      </div>
+      <div className="flex gap-3 items-center">
+        {/* Location */}
+        <div className="flex items-center gap-3 flex-1 sm:flex-initial">
+          <Filter className="size-5" />
+          <span className="text-sm ">Filters</span>
+        </div>
 
-      <Button color="primary" radius="sm" className="px-6">
-        Search <ArrowRight className="size-5" />
-      </Button>
+        <SearchButton />
+      </div>
     </div>
   );
 }

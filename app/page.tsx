@@ -9,35 +9,37 @@ import BorderedButton from "@/components/BorderedButton";
 export default function SearchPage() {
   return (
     <div>
-      <Breadcrumbs className="mb-10">
+      <Breadcrumbs className="mb-6 md:mb-10">
         <BreadcrumbItem>Dashboard</BreadcrumbItem>
         <BreadcrumbItem>Search</BreadcrumbItem>
       </Breadcrumbs>
 
-      <div className="flex gap-4 items-stretch">
+      <div className="flex flex-col lg:flex-row gap-4 items-stretch">
         {/* Sidebar */}
-        <div className="max-w-[254px] w-full">
+        <div className="w-full lg:max-w-[254px] lg:w-full hidden lg:block">
           <FiltersBar />
         </div>
 
         {/* Main Area */}
         <div className="flex-1">
           {/* Heading */}
-          <div className="flex justify-between gap-4 items-end">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-4 sm:items-end mb-4">
             <div className="space-y-2">
-              <h1 className="font-serif text-2xl underline tracking-tighter font-medium">
+              <h1 className="font-serif text-xl sm:text-2xl underline tracking-tighter font-medium">
                 All Searches
               </h1>
               <div className="flex items-center gap-2">
-                <p className="text-sm">
+                <p className="text-xs sm:text-sm">
                   Choose a search to see details or filter opportunities
                 </p>
-                <DangerCircle className="size-4" />
+                <DangerCircle className="size-4 flex-shrink-0" />
               </div>
             </div>
 
             <BorderedButton>
-              START NEW SEARCH <PlusSquare className="size-4" />
+              <span className="hidden sm:inline">START NEW SEARCH</span>
+              <span className="sm:hidden">NEW SEARCH</span>
+              <PlusSquare className="size-4" />
             </BorderedButton>
           </div>
 
