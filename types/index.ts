@@ -6,7 +6,7 @@ export interface Profile {
   location: string;
   tags: string[];
   stage: string;
-  match?: "strong" | "medium" | "weak"
+  match?: Match
 }
 
 export interface Column {
@@ -16,3 +16,5 @@ export interface Column {
 }
 
 export type KanbanData = Column[];
+
+export type Match = "strong" | "medium" | "weak"

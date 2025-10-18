@@ -1,5 +1,5 @@
 import { Envelope, FileText, SparklesSolid } from "@mynaui/icons-react";
-import { Profile } from "@/types";
+import { Match, Profile } from "@/types";
 import { Avatar } from "@heroui/avatar";
 import Badge from "@/components/Badge";
 import Link from "next/link";
@@ -60,7 +60,7 @@ export default function KanbanCard({ profile, onDragStart }: KanbanCardProps) {
   );
 }
 
-function MatchBadge({ match }: { match: "strong" | "medium" | "weak" }) {
+function MatchBadge({ match }: { match: Match }) {
   const getBgColor = () => {
     switch (match) {
       case "strong":
