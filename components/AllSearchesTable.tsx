@@ -38,7 +38,7 @@ function SearchBar() {
         />
       </div>
 
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-3 md:gap-20 items-center">
         {/* Location */}
         <div className="flex items-center gap-3 flex-1 sm:flex-initial">
           <Location className="size-5 flex-shrink-0" />
