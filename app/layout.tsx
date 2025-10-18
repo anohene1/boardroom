@@ -24,7 +24,7 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen text-[#202945] bg-[#F3F3F3] font-sans antialiased",
+          "min-h-screen font-sans antialiased",
           inter.variable,
           baskervville.variable
         )}
