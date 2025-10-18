@@ -3,6 +3,7 @@ import { Sidebar, Bookmark, InboxArchive, Notification } from "@mynaui/icons-rea
 import Image from "next/image";
 import {Button} from "@heroui/button";
 import {Avatar} from "@heroui/avatar";
+import Link from "next/link";
 
 
 export default function Navbar() {
@@ -10,7 +11,9 @@ export default function Navbar() {
         <nav className="px-4 sm:px-6 md:px-12 py-4 sm:py-5 md:py-7 bg-white flex items-center justify-between navbar-shadow">
             <div className="flex items-center gap-2 sm:gap-4">
                 <Button size="sm" variant="light" isIconOnly><Sidebar className="size-5" /></Button>
-                <Image src="/logo.svg" alt="boardroom logo" width={147} height={20} className="w-24 sm:w-32 md:w-[147px]" />
+                <Link href="/">
+                  <Image src="/logo.svg" alt="boardroom logo" width={147} height={20} className="w-24 sm:w-32 md:w-[147px]" />
+                </Link>
             </div>
 
             <div className="flex items-center gap-2 sm:gap-3 md:gap-4">

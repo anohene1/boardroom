@@ -14,7 +14,7 @@ import {
 } from "@mynaui/icons-react";
 import BorderedButton from "@/components/BorderedButton";
 import { Button } from "@heroui/button";
-import { KanbanBoard } from "@/components/Kanban";
+import { KanbanBoard } from "@/components/kanban/Kanban";
 import SearchButton from "@/components/SearchButton";
 
 export default function PipelinePage() {
