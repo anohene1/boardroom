@@ -91,7 +91,7 @@ function SearchBar() {
 
 function Tabs() {
   return (
-    <div className="bg-white py-3 px-5 flex gap-20 text-tiny text-neutral-500">
+    <div className="bg-white py-3 px-5 flex items-center sm:gap-10 md:gap-20 text-tiny text-neutral-500 text-center">
       <p>ALL MEMBERS</p>
       <p className="underline text-black font-medium">PIPELINE</p>
       <p>MEETINGS</p>
