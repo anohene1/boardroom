@@ -11,7 +11,7 @@ import BDCheckbox from "@/components/BDCheckbox";
 
 export default function FiltersBar() {
   return (
-    <div className="bg-white p-5 w-full space-y-4 h-full">
+    <div className="bg-white py-10 md:py-5 px-5 w-full space-y-4 h-full">
       <Button
         radius="sm"
         color="primary"

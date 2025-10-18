@@ -1,12 +1,24 @@
 "use client";
 
-import { BreadcrumbItem, Breadcrumbs } from "@heroui/react";
+import {
+  BreadcrumbItem,
+  Breadcrumbs,
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  Button,
+  useDisclosure,
+} from "@heroui/react";
 import FiltersBar from "@/components/FiltersBar";
-import { DangerCircle, PlusSquare } from "@mynaui/icons-react";
+import { DangerCircle, Filter, PlusSquare } from "@mynaui/icons-react";
 import AllSearchesTable from "@/components/AllSearchesTable";
 import BorderedButton from "@/components/BorderedButton";
 
 export default function SearchPage() {
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
   return (
     <div>
       <Breadcrumbs className="mb-6 md:mb-10">
@@ -36,16 +48,26 @@ export default function SearchPage() {
               </div>
             </div>
 
-            <BorderedButton>
-              <span className="hidden sm:inline">START NEW SEARCH</span>
-              <span className="sm:hidden">NEW SEARCH</span>
-              <PlusSquare className="size-4" />
-            </BorderedButton>
+            <div className="flex items-center gap-2">
+              <Button isIconOnly onPress={onOpen} className="lg:hidden">
+                <Filter />
+              </Button>
+              <BorderedButton>
+                <span>START NEW SEARCH</span>
+                <PlusSquare className="size-4" />
+              </BorderedButton>
+            </div>
           </div>
 
           <AllSearchesTable />
         </div>
       </div>
+
+      <Drawer isOpen={isOpen} onOpenChange={onOpenChange} placement="left" size="xs" >
+        <DrawerContent>
+          <FiltersBar />
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 }

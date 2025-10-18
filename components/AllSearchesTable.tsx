@@ -79,10 +79,10 @@ function OpportunityCell({ label, status }: { label: string; status: string }) {
 // Pipeline Cell Component
 function PipelineCell({ status, number }: { status: string; number?: number }) {
   return (
-    <div className="flex items-center gap-2 font-medium text-small">
+    <div className="flex items-center gap-2 font-medium text-small text-nowrap">
       {status === "building" ? (
         <>
-          <RefreshAlt className="size-5" />
+          <RefreshAlt className="size-5 spin" />
           <p>Building Pipeline...</p>
         </>
       ) : (
@@ -183,7 +183,7 @@ export default function AllSearchesTable() {
           <TableHeader>
             <TableColumn>COMPANY</TableColumn>
             <TableColumn>OPPORTUNITY</TableColumn>
-            <TableColumn className="hidden sm:table-cell">PIPELINE</TableColumn>
+            <TableColumn>PIPELINE</TableColumn>
             <TableColumn>APPLIED</TableColumn>
           </TableHeader>
           <TableBody>
@@ -198,7 +198,7 @@ export default function AllSearchesTable() {
                     status={row.opportunity.status}
                   />
                 </TableCell>
-                <TableCell className="hidden sm:table-cell">
+                <TableCell>
                   <PipelineCell
                     status={row.pipeline.status}
                     number={row.pipeline.number}
